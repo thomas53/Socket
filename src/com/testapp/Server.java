@@ -1,4 +1,4 @@
-package com.testapp;
+//package com.testapp;
 
 import java.io.*;
 import java.net.*;
@@ -20,6 +20,8 @@ public class Server extends Thread{
 			{
 				Socket server = serverSocket.accept();
 				DataInputStream in = new DataInputStream (server.getInputStream ());
+				System.out.println("Client : "+in.readUTF());
+				System.out.println("Client : "+in.readUTF());
 				System.out.println("Client : "+in.readUTF());
 				DataOutputStream out = new DataOutputStream(server.getOutputStream());
 				out.writeUTF("reply server");
